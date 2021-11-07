@@ -1,39 +1,38 @@
 {
-  "name": "vite-svg-loader",
-  "version": "3.0.0",
-  "description": "Vite 2.x plugin to load SVG files as Vue components",
-  "keywords": [
-    "vite",
-    "vue",
-    "svg"
+  "name": "@vite-svg-loader/monorepo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RegisFrey/vite-svg-loader.git"
+  },
+  "contributors": [
+    {
+      "name": "Jan-Paul Kleemans",
+      "email": "jpkleemans@gmail.com"
+    },
+    {
+      "name": "Berton Zhu (meowtec)",
+      "email": "bertonzh@gmail.com"
+    },
+    {
+      "name": "Regis Frey",
+      "email": "RegisFrey@Darkfirestudios.com"
+    }
   ],
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "dependencies": {
-    "@vue/compiler-sfc": "^3.2.20",
-    "svgo": "^2.7.0"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RegisFrey/vite-svg-loader/issues"
   },
-  "devDependencies": {
-    "cypress": "^8.6.0",
-    "standard": "^16.0.3"
-  },
+  "homepage": "https://github.com/RegisFrey/vite-svg-loader#readme",
+  "workspaces": [
+    "lib",
+    "examples/vue",
+    "examples/vue-ts"
+  ],
   "scripts": {
     "lint": "standard --fix",
     "cypress": "cypress run",
-    "example:build": "cd ./examples/vue && npm ci && npm run build",
-    "example:serve": "cd ./examples/vue && npm run serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jpkleemans/vite-svg-loader.git"
-  },
-  "author": {
-    "name": "Jan-Paul Kleemans",
-    "email": "jpkleemans@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jpkleemans/vite-svg-loader/issues"
-  },
-  "homepage": "https://github.com/jpkleemans/vite-svg-loader#readme"
+    "example:build": "npm ci --workspace=examples/vue && npm run build --workspace=examples/vue",
+    "example:serve": "npm run serve --workspace=examples/vue",
+    "test": "npm run example:build && npm run example:serve && cypress"
+  }
 }
