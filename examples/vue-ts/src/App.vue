@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type {} from '@vite-svg-loader/loader';
 import { defineAsyncComponent } from "vue";
 
 import HelloWorld from "./components/HelloWorld.vue";
