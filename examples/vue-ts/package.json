@@ -1,13 +1,14 @@
 {
-  "name": "vue-ts",
-  "version": "0.0.0",
+  "name": "@vite-svg-loader/example-vue-ts",
+  "version": "10.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "@vite-svg-loader/loader": "10.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",

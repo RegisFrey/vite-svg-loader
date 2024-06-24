@@ -12,6 +12,16 @@ describe('Vite SVG Loader', () => {
       })
   })
 
+  /*
+  it('loads svg file as symbol', () => {
+    cy.get('#component svg')
+      .should('exist')
+      .and(($svg) => {
+        expect($svg[0].width.baseVal.value).to.equal(467)
+      })
+  })
+  */
+
   it('accepts classes', () => {
     cy.get('#component svg.test-svg').should('exist')
   })
@@ -33,10 +43,10 @@ describe('Vite SVG Loader', () => {
   })
 
   it('supports ?url param', () => {
-    cy.get('#url').contains(/^\/assets\/test\..+\.svg/)
+    cy.get('#url-value').contains(/^\/assets\/test\..+\.svg/)
   })
 
   it('supports ?raw param', () => {
-    cy.get('#raw').contains('<?xml version="1.0"?>')
+    cy.get('#raw-value').contains('<?xml version="1.0"?>')
   })
 })
